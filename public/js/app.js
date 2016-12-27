@@ -4,7 +4,7 @@ var socket = io();
 
 //jQuery('.room-title').text(room);
 var $roomn = jQuery('.room-title');
-$roomn.append('<p><strong>Room name: </strong><font color = "red" face="Comic Sans MS"><i>' + room + '</i></font></p>');
+$roomn.append('<p><font color = "Gray" face="Comic Sans MS"><i>' + room + '</i></font></p>');
 
 socket.on('connect', function () {
     console.log('Connected to socket.io server!');
