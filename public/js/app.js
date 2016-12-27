@@ -2,8 +2,16 @@ var name = getQueryVariable('name') || 'Anonymous';
 var room = getQueryVariable('room');
 var socket = io();
 
+//jQuery('.room-title').text(room);
+var $roomn = jQuery('.room-title');
+$roomn.append('<p><strong>Room name: </strong><font color = "red" face="Comic Sans MS"><i>' + room + '</i></font></p>');
+
 socket.on('connect', function () {
     console.log('Connected to socket.io server!');
+    socket.emit('joinRoom', {
+        name: name,
+        room: room
+    });
 });
 
 socket.on('message', function (message) {
