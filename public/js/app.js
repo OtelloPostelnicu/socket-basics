@@ -25,6 +25,8 @@ socket.on('message', function (message) {
     $message.append('<p><strong>' + message.name + ' ' + momentTimestamp.local().format('HH:mm') + '</strong></p>');
     $message.append('<p>' + message.text + '</p>');
     $messages.append($message);
+    var elem = document.getElementById('scroll');
+    elem.scrollTop = elem.scrollHeight;
 });
 
 // Handles submitting of new message
